@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+VectorShift Integrations – HubSpot OAuth Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the completed solution for the VectorShift Integrations Technical Assessment, which focuses on implementing a HubSpot OAuth 2.0 integration and loading HubSpot items using FastAPI (backend) and React (frontend).
 
-## Available Scripts
+ Features Implemented
+HubSpot OAuth Integration
 
-In the project directory, you can run:
+OAuth 2.0 authorization flow implemented using HubSpot APIs
 
-### `npm start`
+Secure token exchange and refresh handling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Credentials stored and retrieved via Redis
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Follows the same structure as existing Airtable and Notion integrations
 
-### `npm test`
+ HubSpot Data Loading
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fetches HubSpot objects using authenticated API calls
 
-### `npm run build`
+Converts API responses into IntegrationItem objects
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Displays fetched items in the UI / logs them to the console
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ Frontend Integration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Added HubSpot integration to the UI
 
-### `npm run eject`
+OAuth flow triggered directly from the frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Consistent UI behavior with existing integrations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ Tech Stack
+Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Python
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+FastAPI
 
-## Learn More
+Redis
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+HTTPX
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+OAuth 2.0
 
-### Code Splitting
+Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+React
 
-### Analyzing the Bundle Size
+JavaScript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Fetch API
 
-### Making a Progressive Web App
+OAuth Flow Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+User clicks Connect HubSpot
 
-### Advanced Configuration
+Redirected to HubSpot authorization page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+HubSpot redirects back with authorization code
 
-### Deployment
+Backend exchanges code for access & refresh tokens
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Tokens stored securely
 
-### `npm run build` fails to minify
+HubSpot API queried using valid credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ HubSpot Items Retrieved
+
+The integration retrieves:
+
+Objects from HubSpot (e.g., contacts, companies)
+
+Maps relevant fields to IntegrationItem
+
+Logs or displays items for validation
